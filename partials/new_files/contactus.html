@@ -1,0 +1,123 @@
+<div ng-controller="ContactUsController">
+    <div class="section-head">Get in touch</div>
+    <p class="normal">Complete the form below and we will get back to you as soon as possible to answer your questions or alternatively email us at
+        <a href="mailto:renu.mandal@btinternet.com">
+            <b style="font-style: italic">renu.mandal@btinternet.com (07948997407).</b>
+            </a>
+    </p>
+
+    <div class="normal alert alert-success" ng-if="!showForm">
+    <h2 style="margin: auto 0" class="section-head">Enquiry Sent!</h2>
+        <br/>
+        <br/>
+    <p class="normal">Thank you for your email, we will get back to you as soon as possible.
+        In the meantime please browse the website for more details on our beautiful villa.
+    </p> 
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        </div>
+
+
+        <form ng-if="showForm" class="form-horizontal" data-ng-submit="processForm(formData)">
+            <fieldset>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="name">Name</label>
+                    <div class="col-md-3">
+                        <input id="name" name="name" type="text" placeholder="" ng-model="formData.fullname" class="form-control input-md">
+
+                    </div>
+                    <label class="col-md-2 control-label" for="email">Email</label>
+                    <div class="col-md-3">
+                        <input id="email" name="email" type="email" placeholder="" ng-model="formData.email"  class="form-control input-md">
+
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="phone">Phone</label>
+                    <div class="col-md-3">
+                        <input id="phone" name="phone" type="text" ng-model="formData.phoneno" placeholder="" class="form-control input-md">
+
+                    </div>
+                    <label class="col-md-2 control-label" for="timetocall">Best time to call</label>
+                    <div class="col-md-3">
+                        <input id="timetocall" name="timetocall" type="text" ng-model="formData.timetocall" placeholder="" class="form-control input-md">
+
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="address">Address</label>
+                    <div class="col-md-3">
+                        <input id="address" name="address" type="text" placeholder="" ng-model="formData.address" class="form-control input-md">
+
+                    </div>
+                    <label class="col-md-2 control-label" for="city">City</label>
+                    <div class="col-md-3">
+                        <input id="city" name="city" type="text" placeholder="" ng-model="formData.city" class="form-control input-md">
+
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="zip">Zip/Post code</label>
+                    <div class="col-md-3">
+                        <input id="zip" name="zip" type="text" placeholder=""  ng-model="formData.postCode" class="form-control input-md">
+
+                    </div>
+                    <label class="col-md-2 control-label" for="arrivaldate">Arrival Date</label>
+                    <div class="col-md-3">
+                            <p class="input-group">
+                                <input type="text" id="arrivaldate"  class="form-control"
+                                       uib-datepicker-popup ng-model="formData.dt" is-open="popup2.opened"
+                                       datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+                            </p>
+                        </div>
+                    </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="noofnights">Number of nights</label>
+                    <div class="col-md-3">
+                        <input id="noofnights" name="noofnights" type="text" ng-model="formData.noofnights" placeholder="" class="form-control input-md">
+
+                    </div>
+                    <label class="col-md-2 control-label" for="numberofadults">Number of adults</label>
+                    <div class="col-md-3">
+                        <input id="numberofadults" name="numberofadults" type="text" ng-model="formData.numberofadults" placeholder="" class="form-control input-md">
+
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="numberofchildrens">Number of childrens</label>
+                    <div class="col-md-3">
+                        <input id="numberofchildrens" name="numberofchildrens" type="text" ng-model="formData.numberofchildrens" placeholder="" class="form-control input-md">
+
+                    </div>
+                    <label class="col-md-2 control-label" for="comments">Comments</label>
+                    <div class="col-md-3">
+                        <textarea class="form-control" ng-model="formData.comments" id="comments"  name="comments"></textarea>
+                    </div>
+                </div>
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="comments"></label>
+                    <div class="col-md-4">
+                        <button id="submit"  name="submit"  type="submit" class="btn btn-success col-md-12">Submit</button>
+                    </div>
+                    <label class="col-md-4 control-label" for="comments"></label>
+                </div>
+            </fieldset>
+        </form>
+</div>
