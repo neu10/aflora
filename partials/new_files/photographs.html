@@ -1,0 +1,77 @@
+<!-- Text -->
+<div id="photographs_section">
+    <div class="section-head">Photographs</div>
+    <div ng-controller="PhotoController">
+        <p class="normal">The images below show just some of the fantastic features of our villa and the facilities in
+            the splendid clubhouse.</p>
+
+
+        <uib-tabset type="pills">
+            <uib-tab heading="View Pictures">
+                <br/>
+                <br/>
+                <ks-swiper-container loop="true" show-nav-buttons="true" pagination-is-active="true"
+                                     slides-per-view="1" space-between="5" pagination-clickable="true">
+                    <ks-swiper-slide class="swiper-slide" ng-repeat="imgg in images">
+                        <img ng-src={{imgg.img}} width="auto" height="400px">
+                    </ks-swiper-slide>
+                </ks-swiper-container>
+<br/>
+<br/>
+
+                <a ng-click="showMorePhotos = !showMorePhotos" class="nav-link" style="cursor: pointer"><b><span ng-if="!showMorePhotos"> View full gallery</span><span ng-if="showMorePhotos"> Hide gallery</span>  > </b></a>
+
+                <ng-gallery ng-if="showMorePhotos" class="horizontal-row" images="images" thumbs-num="11">
+                </ng-gallery>
+            </uib-tab>
+            <uib-tab heading="Experience virtual tour">
+                <br/>
+                <br/>
+                <div class="container">
+
+                <iframe src="http://professionalvirtualtour.com/TropEscapeVH/554Paloma/flash/TourWeaver_tropical-Tour.html"
+                        frameBorder="0" width="900px" style="margin-left: -43px;"
+                        height="690px"></iframe>
+                </div>
+            </uib-tab>
+        </uib-tabset>
+
+
+        <!--<iframe name="wblite" frameborder="0" width="600" height="500" scrolling="no" src="http://www.afloridaorlandovilla.com/panorama/bb/index.htm"></iframe>
+       -->
+
+    </div>
+    <div class="section-head">Description</div>
+    <p>This Villa offers the following amenities:</p>
+    <ul>
+        <li>Formal dining area </li>
+        <li>Cable TV and TV's in all bedrooms</li>
+        <li>Fully equipped kitchen with all china, glass and flatware provided</li>
+        <li>Fridge/Freezer, stove, microwave, coffee machine</li>
+        <li>Screened pool area with sun loungers, table and chairs</li>
+        <li>Screened pool area with sun loungers, table, chairs and parasol.</li>
+        <li>Grill/BBQ.</li>
+        <li>Air conditioning</li>
+        <li>Games Room with pool table, foosball and air hockey</li>
+        <li>Washer, dryer and iron/ironing board</li>
+        <li>All linen and towels provided.</li>
+        <li>Safe.</li>
+    </ul>
+
+    <script language="javascript">
+
+        function Piccys() {
+            // Set the IFRAME to be the picture viewer
+
+            var objFrame = document.getElementById("wblite");
+            objFrame.src = "http://aviana.somee.com/photos.html";
+        }
+
+        function Rotate() {
+            // Set the IFRAME to be the panaorama viewer
+
+            var objFrame = document.getElementById("wblite");
+            objFrame.src = "http://www.afloridaorlandovilla.com/panorama/bb/index.htm";
+        }
+    </script>
+</div>

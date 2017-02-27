@@ -1,0 +1,62 @@
+<div ng-controller="ModalDemoCtrl">
+    <div class="section-head">Rates And Availability</div>
+    <p class="normal">The current rates for the villa are as follows and are subject to change without notice. Live
+        exchange rate of <strong class="bold"> $ {{1/conversionRate | number:2}} / &pound; 1 </strong> has been used.</p>
+    <div class="row">
+        <p class="heading col-md-9">Rates(Off-Peak)</p>
+        <button class="btn btn-primary col-md-3 float-right" ng-click="toggleCurrency(buttonLabel)">{{buttonLabel}}</button>
+    </div>
+        <div id="wrapper">
+        <div class="col-md-6">
+            <div class="circle c1 img-circle">
+                <h4 class="price-large blue">Off-Peak season</h4>
+                <br/>
+                <span data-ng-if="showPoundsRate" class="price-small blue">January – July & September - December from
+                    <span class="price-large blue">£{{poundsPriceOffPeak}}</span><span class="price-small blue">/week</span></span>
+
+                <span data-ng-if="!showPoundsRate" class="price-small blue">January – July & September - December from
+                    <span class="price-large blue">${{poundsPriceOffPeak/conversionRate | number:0}}</span><span class="price-small blue">/week</span></span>
+            </div>
+        </div><!-- .Col-md-3 ends here -->
+
+        <div class="col-md-6">
+            <div class="circle c2 img-circle">
+                <h4 class="price-large yellow">Peak season</h4>
+                <br/>
+                <span data-ng-if="showPoundsRate" class="price-small yellow"> EASTER & CHRISTMAS HOLIDAYS from
+                     <span class="price-large">£{{poundsPricePeak}}</span>/week.
+                <br/>
+                <br/>
+                    AUGUST
+                    <span class="price-large">£{{poundsPricePeakAug}}</span>/week.
+                </span>
+                <span data-ng-if="!showPoundsRate" class="price-small yellow"> EASTER & CHRISTMAS HOLIDAYS from
+                     <span class="price-large">${{poundsPricePeak/conversionRate | number:0}}</span>/week.
+                <br/>
+                <br/>
+                    AUGUST
+                    <span class="price-large">${{poundsPricePeakAug/conversionRate | number:0}}</span>/week.
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="price-info">
+        <div class="padding-top-30 bordered">
+        <p class="normal">** ALL PRICES INCLUDE 12% Tax and Pool Heat With Solar Panels **<br/>
+           <b style="font-size: 14px;font-style: italic">Gas pool heat is also available for $20.00/&pound;15.00 per day if required over and above the heating provided
+            by the solar panels.</b></p>
+
+        <p class="normal">A cleaning fee of $90.00/&pound;60.00 for stays of 6 nights or less.</p>
+        </div>
+    </div>
+
+    <div>
+        <p class="normal">The calendar below shows the dates available that the villa is available for hire. <b>All
+        current terms and conditions of rental can be
+        found <a ng-click="openTerms('lg')"><font color="blue" style="cursor: pointer">here</font></a></b>
+</p>
+        <iframe class="container" name="wblite" frameborder="0" width="600" height="900px"
+                scrolling="no" src="http://www.timeoutfloridavillas.com/EmbedCalendar.aspx?PropertyID=85909&Rows=4&Cols=3"></iframe>
+
+    </div>
+</div>

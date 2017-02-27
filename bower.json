@@ -1,0 +1,24 @@
+{
+  "name": "afloridaorlandovilla",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "nu10 <garlanutan@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ngGallery": "*",
+    "ui.bootstrap": "^1.2.5",
+    "angular-bootstrap": "^1.2.5",
+    "ngmap": "^1.17.8"
+  }
+}
